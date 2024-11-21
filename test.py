@@ -8,7 +8,3 @@ def is_prime(number):
             if number % i == 0:
                 return False
         return True
-
-print(is_prime(2))
-print(is_prime(10))
-print(is_prime(13))
