@@ -1,10 +1,16 @@
-def is_prime(number):
-    if not isinstance(number, int) or number <= 0:
-        raise ValueError("Input must be an integer")
-    else:
-        if number < 2:
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
             return False
-        for i in range(2, int(number ** 0.5) + 1):
-            if number % i == 0:
-                return False
-        return True
+    return True
+
+def primes_in_range(a, b):
+    if not isinstance(a, int) or not isinstance(b, int) or (a < 0) or (b < 0) or (b < a):
+        raise ValueError("Error")
+    primes = []
+    for i in range(a, b):
+        if is_prime(i):
+            primes.append(i)
+    return primes
