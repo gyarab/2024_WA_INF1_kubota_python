@@ -1,14 +1,5 @@
-def rotate_array(arr, n):
-    if not isinstance(arr, list):
-        raise ValueError("Input must be an array")
+def split_into_threes(text):
+    if not isinstance(text, str):
+        raise ValueError("Input must be a string")
     
-    if len(arr) == 0:
-        return arr
-    
-    if not isinstance(n, int):
-        raise ValueError("n must be an integer")
-    
-    n = n % len(arr)
-    return arr[-n:] + arr[:-n]
-
-print(rotate_array([], 2))
+    return [text[i:i+3] for i in range(0, len(text), 3)]
