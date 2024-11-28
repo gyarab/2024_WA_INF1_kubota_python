@@ -7,7 +7,3 @@ def rotate_array(arr, n):
     
     n = n % len(arr)
     return arr[-n:] + arr[:-n]
-
-print(rotate_array([1, 2, 3, 4, 5], 2))
-print(rotate_array([1, 2, 3, 4, 5], -1))
-print(rotate_array("not a list", 2))
