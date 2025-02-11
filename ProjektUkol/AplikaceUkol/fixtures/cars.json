@@ -3,9 +3,39 @@
     "model": "AplikaceUkol.manufacturer",
     "pk": 1,
     "fields": {
-        "name": "Test", 
-        "established": 1, 
-        "countryOfOrigin": "Test",
+        "name": "Škoda", 
+        "established": 1895, 
+        "countryOfOrigin": "Česká republika",
+            "defunct": false
+        }
+    },
+    {
+    "model": "AplikaceUkol.manufacturer",
+    "pk": 2,
+    "fields": {
+        "name": "Avia", 
+        "established": 1919, 
+        "countryOfOrigin": "Česká republika",
+            "defunct": true
+        }
+    },
+    {
+    "model": "AplikaceUkol.manufacturer",
+    "pk": 3,
+    "fields": {
+        "name": "Toyota", 
+        "established": 1937, 
+        "countryOfOrigin": "Japonsko",
+            "defunct": false
+        }
+    },
+    {
+    "model": "AplikaceUkol.manufacturer",
+    "pk": 4,
+    "fields": {
+        "name": "Porsche", 
+        "established": 1931, 
+        "countryOfOrigin": "Německo",
             "defunct": false
         }
     },
@@ -13,25 +43,239 @@
         "model": "AplikaceUkol.category", 
         "pk": 1, 
         "fields": {
-            "name": "Test"
+            "name": "Hatchback"
         }
-    }, 
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 2, 
+        "fields": {
+            "name": "Sedan"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 3, 
+        "fields": {
+            "name": "Kombi"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 4, 
+        "fields": {
+            "name": "SUV"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 5, 
+        "fields": {
+            "name": "Sportovní"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 6, 
+        "fields": {
+            "name": "Terénní"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 7, 
+        "fields": {
+            "name": "Kupé"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 8, 
+        "fields": {
+            "name": "Kabriolet"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 9, 
+        "fields": {
+            "name": "FWD"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 10, 
+        "fields": {
+            "name": "RWD"
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 11, 
+        "fields": {
+            "name": "AWD"
+        }
+    },
     {
         "model": "AplikaceUkol.carspecifications", 
         "pk": 1,
         "fields": {
-            "name": "Test", 
-            "engine": "test",
-            "fuel": "test", 
-            "displacement": 1000.0, 
-            "power": 100, 
-            "kilometrageCity": 1.0, 
-            "kilometrageRoad": 2.0, 
-            "weight": 3, 
-            "top_speed": 4, 
-            "zero_to_hundred": 5.0,
+            "name": "Octavie 1", 
+            "engine": "1.9 TDI",
+            "fuel": "Nafta", 
+            "displacement": 1.896, 
+            "power": 66, 
+            "kilometrageCity": 6.7, 
+            "kilometrageRoad": 4.2, 
+            "weight": 1285, 
+            "top_speed": 181, 
+            "zero_to_hundred": 13.5,
             "manufacturer": 1, 
-            "categories": [1]
+            "categories": [9, 2]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 2,
+        "fields": {
+            "name": "718 Boxster", 
+            "engine": "DNY",
+            "fuel": "Benzín", 
+            "displacement": 1.988, 
+            "power": 221, 
+            "kilometrageCity": 11.8, 
+            "kilometrageRoad": 6.9, 
+            "weight": 1410, 
+            "top_speed": 275, 
+            "zero_to_hundred": 5.1,
+            "manufacturer": 4, 
+            "categories": [5,8,10]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 3,
+        "fields": {
+            "name": "Yaris GR", 
+            "engine": "G16E-GTS",
+            "fuel": "Benzín", 
+            "displacement": 1.618, 
+            "power": 206, 
+            "kilometrageCity": 11.8, 
+            "kilometrageRoad": 6.9, 
+            "weight": 1280, 
+            "top_speed": 230, 
+            "zero_to_hundred": 5.2,
+            "manufacturer": 3, 
+            "categories": [1,5,6,11]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 4,
+        "fields": {
+            "name": "Hilux 2021", 
+            "engine": "2.8L turbo diesel",
+            "fuel": "Nafta",
+            "displacement": 1.618, 
+            "power": 206, 
+            "kilometrageCity": 11.8, 
+            "kilometrageRoad": 6.9, 
+            "weight": 1280, 
+            "top_speed": 230, 
+            "zero_to_hundred": 5.2,
+            "manufacturer": 3, 
+            "categories": [1,5,6,11]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 5,
+        "fields": {
+            "name": "Škoda Yeti Facelift Monte Carlo Specs", 
+            "engine": "1.2 TSI",
+            "fuel": "Benzín",
+            "displacement": 1.197, 
+            "power": 81, 
+            "kilometrageCity": 6.7, 
+            "kilometrageRoad": 4.8, 
+            "weight": 1340, 
+            "top_speed": 179, 
+            "zero_to_hundred": 10.9,
+            "manufacturer": 1, 
+            "categories": [4, 9]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 6,
+        "fields": {
+            "name": "Avia 750 MKIII", 
+            "engine": "Inline 2 BMW",
+            "fuel": "Benzín",
+            "displacement": 0.750, 
+            "power": 0, 
+            "kilometrageCity": 0, 
+            "kilometrageRoad": 0, 
+            "weight": 400, 
+            "top_speed": 0, 
+            "zero_to_hundred": 0,
+            "manufacturer": 2, 
+            "categories": [5, 8, 10]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 7,
+        "fields": {
+            "name": "Fabia 4", 
+            "engine": "1,5 TSI",
+            "fuel": "Benzín",
+            "displacement": 1.498, 
+            "power": 110, 
+            "kilometrageCity": 7, 
+            "kilometrageRoad": 5.2, 
+            "weight": 1238, 
+            "top_speed": 222, 
+            "zero_to_hundred": 8.0,
+            "manufacturer": 1,
+            "categories": [1, 9]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 8,
+        "fields": {
+            "name": "RAV 4", 
+            "engine": "2.0 VVT-iE",
+            "fuel": "Benzín",
+            "displacement": 1.987, 
+            "power": 129, 
+            "kilometrageCity": 7.5, 
+            "kilometrageRoad": 5.2, 
+            "weight": 1536, 
+            "top_speed": 190, 
+            "zero_to_hundred": 9.8,
+            "manufacturer": 3,
+            "categories": [4, 6, 9]
+        }
+    },
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 9,
+        "fields": {
+            "name": "919 hybrid evo", 
+            "engine": "9R9 2.0 L + elektrické motory",
+            "fuel": "Benzín + elektřina",
+            "displacement": 2000, 
+            "power": 854, 
+            "kilometrageCity": 8.9, 
+            "kilometrageRoad": 6.2, 
+            "weight": 849, 
+            "top_speed": 359, 
+            "zero_to_hundred": 2.0,
+            "manufacturer": 4,
+            "categories": [5, 11]
         }
     }
 ]
