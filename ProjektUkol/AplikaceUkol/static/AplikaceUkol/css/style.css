@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #113a34 25%, transparent 25%) 60px 0,
+                linear-gradient(-45deg, #113a34 25%, transparent 25%) -30px 0,
+                linear-gradient(45deg, transparent 75%, #113a34 75%) 0px 0,
+                linear-gradient(-45deg, transparent 75%, #113a34 75%) 30px 0;
+    background-size: 60px 60px;
+    background-color: #104943;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+h1 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #fff958;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+}

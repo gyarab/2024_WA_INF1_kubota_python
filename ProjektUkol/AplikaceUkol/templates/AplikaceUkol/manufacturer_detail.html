@@ -1,0 +1,16 @@
+{% extends "AplikaceUkol/base.html" %}
+
+{% block content %}
+    <h1>{{ manufacturer.name }}</h1>
+    <p>Založeno roku {{ manufacturer.established }}, {% if manufacturer.defunct %} už neexistuje{% else %} stále aktivní{% endif %}</p>
+    <p>Země původu: {{ manufacturer.countryOfOrigin }}</p>
+
+    <h2>Auta od tohoto výrobce:</h2>
+    <ul>
+        {% for car in cars %}
+            <li><a href="/AplikaceUkol/cars/{{ car.pk }}">{{ car.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/AplikaceUkol/">Zpět na seznam</a></p>
+{% endblock %}

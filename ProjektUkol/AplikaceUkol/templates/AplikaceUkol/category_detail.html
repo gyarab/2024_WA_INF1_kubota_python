@@ -1,0 +1,14 @@
+{% extends "AplikaceUkol/base.html" %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+
+    <h2>Auta v této kategorii:</h2>
+    <ul>
+        {% for car in cars %}
+            <li><a href="/AplikaceUkol/cars/{{ car.pk }}">{{ car.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/AplikaceUkol/">Zpět na seznam</a></p>
+{% endblock %}

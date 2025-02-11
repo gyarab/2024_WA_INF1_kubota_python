@@ -1,0 +1,10 @@
+{% extends "AplikaceUkol/base.html" %}
+
+{% block content %}
+    <h1>Seznam výrobců</h1>
+    <ul>
+        {% for manufacturer in manufacturers %}
+            <li><a href="{% url 'manufacturer_detail' manufacturer.pk %}">{{ manufacturer.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

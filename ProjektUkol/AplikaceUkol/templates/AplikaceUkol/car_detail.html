@@ -1,0 +1,27 @@
+{% extends "AplikaceUkol/base.html" %}
+
+{% block content %}
+    <h1>{{ car.name }}</h1>
+    <ul>
+        <li>Motor: {{ car.engine }}</li>
+        <li>Palivo: {{ car.fuel }}</li>
+        <li>Objem: {{ car.displacement }} L</li>
+        <li>Výkon: {{ car.power }} kW</li>
+        <li>Spotřeba ve městě: {{ car.kilometrageCity }} L/100 km</li>
+        <li>Spotřeba na silnici: {{ car.kilometrageRoad }} L/100 km</li>
+        <li>Hmotnost: {{ car.weight }} kg</li>
+        <li>Maximální rychlost: {{ car.top_speed }} km/h</li>
+        <li>Zrychlení 0-100 km/h: {{ car.zero_to_hundred }} s</li>
+    </ul>
+
+    <h2>Kategorie: </h2>
+    <ul>
+        {% for cat in categories %}
+            <li><a href="/AplikaceUkol/categories/{{ cat.pk }}">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Výrobce: <a href="/AplikaceUkol/manufacturers/{{ manufacturer.pk }}">{{ manufacturer.name }}</a></h2>
+
+    <p><a href="/AplikaceUkol">Zpět na seznam</a></p>
+{% endblock %}

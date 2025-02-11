@@ -1,0 +1,23 @@
+{% extends "AplikaceUkol/base.html" %}
+
+{% block content %}
+<h1>Auta: </h1>
+    <ul>
+        {% for car in cars %}
+            <li><a href="/AplikaceUkol/cars/{{ car.pk }}">{{ car.name }}</a></li>
+        {% endfor %}
+    </ul>
+<h1>Kategorie: </h1>
+    <ul>
+        {% for cat in categories %}
+            <li><a href="/AplikaceUkol/categories/{{ cat.pk }}">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+<h1>Výrobci: </h1>
+    <ul>
+        {% for man in manufacturers %}
+            <li><a href="/AplikaceUkol/manufacturers/{{ man.pk }}">{{ man.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
