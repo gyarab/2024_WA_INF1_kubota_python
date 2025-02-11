@@ -1,0 +1,37 @@
+[
+    {
+    "model": "AplikaceUkol.manufacturer",
+    "pk": 1,
+    "fields": {
+        "name": "Test", 
+        "established": 1, 
+        "countryOfOrigin": "Test",
+            "defunct": false
+        }
+    },
+    {
+        "model": "AplikaceUkol.category", 
+        "pk": 1, 
+        "fields": {
+            "name": "Test"
+        }
+    }, 
+    {
+        "model": "AplikaceUkol.carspecifications", 
+        "pk": 1,
+        "fields": {
+            "name": "Test", 
+            "engine": "test",
+            "fuel": "test", 
+            "displacement": 1000.0, 
+            "power": 100, 
+            "kilometrageCity": 1.0, 
+            "kilometrageRoad": 2.0, 
+            "weight": 3, 
+            "top_speed": 4, 
+            "zero_to_hundred": 5.0,
+            "manufacturer": 1, 
+            "categories": [1]
+        }
+    }
+]
