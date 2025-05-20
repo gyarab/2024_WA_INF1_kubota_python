@@ -31,4 +31,12 @@ class CarSpecifications(models.Model):
     
     def __str__(self):
         return self.name
+    
+class Comment(models.Model):
+    name = models.CharField(max_length=100)
+    rating = models.IntegerField()
+    comment = models.TextField()
+    car_review = models.ForeignKey(CarSpecifications, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.name} - {self.car_review.name}"
