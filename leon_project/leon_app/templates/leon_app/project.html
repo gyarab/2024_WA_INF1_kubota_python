@@ -21,7 +21,22 @@
     <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #ff00ff05">CONTENT</p>
     <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #ff00ff05">CONTENT</p>
 
+
     <!-- Feedback -->
-    <h1>Feedback</h1>
+    <h1>Leave your feedback!</h1>
     <h2>Please feel free to post any feedback to the work presented here. No login required.</h2>
+
+    <!-- Feedback form-->
+    <form method="post" action="{% url 'leon_app:project' project.pk %}">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Other users feedback -->
+    {% for fb in project.feedbacks.all %}
+        <div>
+            <strong>{{ fb.name }}</strong>: {{ fb.text }}
+        </div>
+    {% endfor %}
 {% endblock %}
