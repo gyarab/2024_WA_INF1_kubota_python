@@ -1,0 +1,57 @@
+[
+    {
+        "model": "leon_app.project",
+        "pk": 1,
+        "fields": {
+            "name": "Example project 1",
+            "thumbnail": "projects/thumbnail/Example-thumbnail-1.jpg",
+            "short_desc": "This is an example project",
+            "description": "This is an example project, it's sole purpouse is testing the limits of this glorious web application. The description has to be long, that is why I am writing this useless text. I should use lorem ipsum but I am wayyy too lazy for that. Surely, this has to be enough.",
+            "created": "2025-05-24"
+        }
+    },
+    {
+        "model": "leon_app.project",
+        "pk": 2,
+        "fields": {
+            "name": "Example project 2",
+            "thumbnail": "projects/thumbnail/Example-thumbnail-2.jpg",
+            "short_desc": "This is another example project",
+            "description": "This is another example project, it's pretty much uselles, just like the last one. I hope this application works well and I can smoothly make migrations and then migrate. Blablabla. \"Wow, this project is so interesting\" - You. I had to do some funny stuff for the: \" character.",
+            "created": "2025-05-24"
+        }
+    },
+    {
+        "model": "leon_app.project",
+        "pk": 3,
+        "fields": {
+            "name": "Example project 3",
+            "thumbnail": "projects/thumbnail/Example-thumbnail-3.jpg",
+            "short_desc": "Yet another example project",
+            "description": "Wow, yet another project with no purpose other than to look nice in the wall of other example projects. But this one is different. It was made in the year 1995. How could that be? It's quiet simple. I LIED. Muhahaha. And if I didn't reveal it, you would have NO idea. Such a devious prankster.",
+            "created": "1995-08-17"
+        }
+    },
+    {
+        "model": "leon_app.project",
+        "pk": 4,
+        "fields": {
+            "name": "Fourth example project",
+            "thumbnail": "projects/thumbnail/Example-thumbnail-4.jpg",
+            "short_desc": "Aww sh*t, here we go again (GTA reference)",
+            "description": "How awful must life be that I am writing this stuff again. I would LOVE to just use \"lorem ipsum\" but I am too commited to making these (hopefully) funny. Or at least entertaining. Are you amused? You should be. Also, this project is from a very scary day. Such tragedy, but at least this beautiful project was created.",
+            "created": "2001-09-11"
+        }
+    },
+    {
+        "model": "leon_app.project",
+        "pk": 5,
+        "fields": {
+            "name": "Future five",
+            "thumbnail": "projects/thumbnail/Future-five-thumbnail.jpg",
+            "short_desc": "The future and beyond!",
+            "description": "The year is 2045, students at Gymnázium Arabská are still using Java and NetBeans IDE 8.0. Modernity is rejected, tradition is embraced. ChatGPT has been banned worldwide after \"The Incident\". Unfortunately, there will be no more \"vibe coding\". :(.",
+            "created": "2045-06-04"
+        }
+    }
+]

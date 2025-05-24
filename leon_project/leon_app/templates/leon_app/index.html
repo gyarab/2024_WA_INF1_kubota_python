@@ -1,0 +1,33 @@
+{% extends "leon_app/base.html" %}
+{% load static %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div style="position: relative; display: inline-block;">
+  <img id="hero-image" src="{% static 'leon_app/background.jpg' %} " alt="hero image">
+  <div style="position: absolute; bottom: 10%; left: 10%; color: white;">
+    <h1 class = "custom" style="font-size: 96px; margin-bottom: 0;">WELCOME!</h1>
+    <h2 class = "custom" style="font-size: 32px; margin-top:0; margin-bottom: 0;">To my website</h2>
+  </div>
+</div>
+
+<h1>Latest projects</h1>
+
+<!-- projects grid -->
+<div class = "projects-grid">
+  {% for i in projects %}
+    <a href="{% url 'leon_app:project' i.pk %}" style="text-decoration: none; color: inherit;">
+      <div class="grid-card">
+        <div style="border-radius: 8px; overflow: hidden;">
+          <img src="{% if i.thumbnail %}{{ i.thumbnail.url }}{% else %}{% static 'leon_app/default.png' %}{% endif %}" alt="{{ i.name}}">
+        </div>
+        <p class="tiny" style="margin-bottom: 0; padding-bottom: 0; text-align: right;">{{ i.created }}</p>
+        <h3 style="margin-top: 0; padding-top: 0;">{{ i.name }}</h3>
+        <p>{{ i.description }}</p>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'leon_app/style.css' %}">
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <div class="nav-left">
+                <a class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'leon_app:index' %}">Home</a>
+                <!-- tuhle obludu vygenerovalo ChatGPT. Chápu jak funguje, ale je to divný -->
+                <a class="{% if request.resolver_match.url_name == 'projects' or request.resolver_match.url_name == 'project' %}active{% endif %}" href="{% url 'leon_app:projects' %}">Projects</a>
+                <a class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'leon_app:contact' %}">Contact</a>
+                <a class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'leon_app:about' %}">About</a>
+            </div>
+            <div class="nav-right">
+                <a href="#login">Login</a>
+                <a href="#settings">Settings</a>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+
+        <!-- static Javascript file -->
+        <script src="{% static 'leon_app/script.js' %}"></script>
+    </body>
+</html>
