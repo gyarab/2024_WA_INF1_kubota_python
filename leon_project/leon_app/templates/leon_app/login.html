@@ -6,4 +6,12 @@
 {% block content %}
 <h1>Login</h1>
 
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log in</button>
+</form>
+
+<p class="centering">Don't have an account? <a href="{% url 'leon_app:register' %}"><button style="margin-left: 10px">Register</button></a></p> 
+
 {% endblock %}

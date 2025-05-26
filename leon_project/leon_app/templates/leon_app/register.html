@@ -1,0 +1,16 @@
+{% extends "leon_app/components/base.html" %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h1>Register</h1>
+
+<h2>Register</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Register</button>
+</form>
+
+{% endblock %}
