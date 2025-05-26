@@ -1,4 +1,4 @@
-{% extends "leon_app/base.html" %}
+{% extends "leon_app/components/base.html" %}
 {% load static %}
 
 {% block title %}{{ project.name }}{% endblock %}
@@ -16,11 +16,12 @@
     <p>{{ project.description }}</p>
 
     <!-- Temporary scrolling space -->
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #ff00ff05">CONTENT</p>
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #ff00ff05">CONTENT</p>
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #ff00ff05">CONTENT</p>
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #ff00ff05">CONTENT</p>
+    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
+    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
+    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
+    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
 
+    <hr>
 
     <!-- Feedback -->
     <h1>Leave your feedback!</h1>
@@ -29,14 +30,23 @@
     <!-- Feedback form-->
     <form method="post" action="{% url 'leon_app:project' project.pk %}">
         {% csrf_token %}
-        {{ form.as_div }}
-        <button type="submit">Submit</button>
+        {{ form.name }}
+        {{ form.text }}
+        <button type="submit" style="margin-left: 25%; margin-right: 25%">Submit</button>
     </form>
 
+    <hr>
+
     <!-- Other users feedback -->
-    {% for fb in project.feedbacks.all %}
-        <div>
-            <strong>{{ fb.name }}</strong>: {{ fb.text }}
-        </div>
-    {% endfor %}
+    <h1>Other users feedback</h1>
+    <div id = "feedbacks">
+        {% for fb in project.feedbacks.all %}
+            <div id="feedbacks_card">
+                <h3 class="custom">{{ fb.name }}</h3>
+                <p class="tiny">{{ fb.created }}</p>
+                <p class="custom">{{ fb.text }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

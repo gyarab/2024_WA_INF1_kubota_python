@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from .models import Project, Feedback
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import FeedbackForm
 
 def index(request):
@@ -26,7 +26,14 @@ def project(request, pk):
             feedback = form.save(commit=False)
             feedback.project = project
             feedback.save()
+            return redirect('leon_app:project', pk=project.pk)
     else:
-        form = Feedback()
+        form = FeedbackForm()
 
     return render(request, 'leon_app/project.html', {'project': project, 'form': form})
+
+def login(request):
+    return render(request, 'leon_app/login.html')
+
+def settings(request):
+    return render(request, 'leon_app/settings.html')

@@ -1,11 +1,79 @@
-body {
+:root {
+  --accent: #4080ff;
+  --accent_bold: #0062ff;
+  --main_color: #ffffff;
+  --footer: #404040;
+  --light_text: #808080;
+  --very_light_text: #aaaaaa;
+}
+
+
+html {
+  height: 100%;
+  color: var(--footer);
   font-family: Arial, Helvetica, sans-serif;
+}
+body {
   margin: 0;
   padding: 0;
+  position: relative;
 }
-img {
-  -webkit-user-drag: none;  /* Chrome, Safari */
-  user-select: none;        /* Optional: also prevent text selection */
+button {
+  background-color: var(--accent);
+  box-shadow: 0 5px 20px rgba(171, 152, 152, 0.1);
+  color: var(--main_color);
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+button:hover {
+  background-color: var(--accent_bold);
+  color: var(--main_color);
+}
+hr {
+  margin-top: 5%;
+  margin-left: 10%; 
+  margin-right: 10%; 
+  height:2px;
+  border-width:0;
+  color: var(--very_light_text);
+  background-color: var(--very_light_text);
+}
+
+/* form */
+form {
+  display:grid;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 10px;
+  padding: 20px;
+}
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 16px; 
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border: none;
+  border-radius: 8px;
+  resize: none;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--very_light_text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* interactable stuff */
@@ -13,7 +81,12 @@ img {
   position: absolute;
   bottom: 25px;
   right: 10%;
-  color: black;
+  color: #000000;
+}
+.big_button {
+  font-size: 24px;
+  margin-top: 20px;
+  padding: 8px 16px;
 }
 
 /* text settings */
@@ -25,18 +98,62 @@ h1:not(.custom) {
 h2:not(.custom) {
   text-align: center;
 }
+h3:not(.custom) {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: justify;
+}
 .tiny {
-  color: #404040;
+  color: var(--very_light_text);
   font-size: 12px;
 }
 .left {
   text-align: left !important;
   padding-left: 10%;
 }
-p:not(.custom) {
-  padding-left: 15%;
-  padding-right: 15%;
+p:not(.custom):not(.tiny) {
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 16px;
+  text-align: justify;
+  hyphens: auto;
 }
+
+/* footer */
+#footer {
+  /* margin-top: 16px; */
+  padding-top: 16px;
+  /* background-color: var(--footer); */
+}
+#footer p{
+  color: var(--very_light_text);
+}
+#footer a{
+  color: var(--very_light_text);
+  text-decoration: none;
+}
+#footer a:hover{
+  text-decoration: underline;
+}
+
+
+/* feedbacks */
+#feedbacks {
+  display:grid;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 10px;
+  padding: 20px;
+}
+#feedbacks_card {
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
 
 /* projects grid */
 .projects-grid {
@@ -49,7 +166,6 @@ p:not(.custom) {
 .grid-card {
   display: flex;
   flex-direction: column;
-  height: 450px;
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
@@ -66,12 +182,10 @@ p:not(.custom) {
 .grid-card img {
   width: 100%;
   height: auto;
-  filter: blur(2px);
   transition: all 0.3s ease;
 }
 .grid-card img:hover {
   transform: scale(1.05);
-  filter: blur(0);
 }
 
 
@@ -100,11 +214,20 @@ p:not(.custom) {
   padding: 8px 16px;
   display: inline-block;
   border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 .topnav a:hover {
-  color: #4080ff;
+  background-color: var(--accent_bold);
+  color: var(--main_color);
 }
 .topnav a.active {
-  background-color: #4080ff;
+  background-color: var(--accent);
   color: #ffffff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.topnav a.active:hover {
+  background-color: var(--accent_bold);
+  color: #ffffff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }

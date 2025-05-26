@@ -9,6 +9,6 @@ class Project(models.Model):
 
 class Feedback(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='feedbacks')
-    name = models.CharField(max_length=50)
-    text = models.TextField()
+    name = models.CharField(max_length=50, blank=True)
+    text = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)

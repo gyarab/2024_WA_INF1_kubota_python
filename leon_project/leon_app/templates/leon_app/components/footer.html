@@ -1,0 +1,15 @@
+{% load static %}
+
+<div id="footer">
+    <hr> 
+    <div>
+        <p style="text-align: left; position: absolute; left: 10px;">
+            <a href="#" onclick="scrollToTop()">Back to top</a>
+          </p>
+        <p style="text-align: right; position: absolute; right: 10;">See more: <a href="{% url 'leon_app:index' %}">Home</a> <a href="{% url 'leon_app:projects' %}">Projects</a> <a href="{% url 'leon_app:contact' %}">Contact</a> <a href="{% url 'leon_app:about' %}">About</a> <a href="{% url 'leon_app:login' %}">Login</a> <a href="{% url 'leon_app:settings' %}">Settings</a></p> 
+    </div>
+
+    <div class="centering" style="padding-top: 40px;">
+        <p class="custom">Thanks for reading!</p>
+    </div>
+</div>

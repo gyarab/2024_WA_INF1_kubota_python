@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class = "projects-grid">
+  {% for i in projects %}
+    <a href="{% url 'leon_app:project' i.pk %}" style="text-decoration: none; color: inherit;">
+      <div class="grid-card" style="height: 420px;">
+        <div style="border-radius: 8px; overflow: hidden;">
+          <img src="{% if i.thumbnail %}{{ i.thumbnail.url }}{% else %}{% static 'leon_app/default.png' %}{% endif %}" alt="{{ i.name}}">
+        </div>
+        <p class="tiny" style="margin-bottom: 0; padding-bottom: 0; text-align: right;">{{ i.created }}</p>
+        <h3 class="custom" style="margin-top: 0px; padding-top: 0; margin-bottom: 0px;">{{ i.name }}</h3>
+        <p style="margin-top: 10px">{{ i.description }}</p>
+      </div>
+    </a>
+  {% endfor %}
+</div>

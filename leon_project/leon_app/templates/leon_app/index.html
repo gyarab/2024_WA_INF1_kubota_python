@@ -1,4 +1,4 @@
-{% extends "leon_app/base.html" %}
+{% extends "leon_app/components/base.html" %}
 {% load static %}
 
 {% block title %}Homepage{% endblock %}
@@ -15,19 +15,19 @@
 <h1>Latest projects</h1>
 
 <!-- projects grid -->
-<div class = "projects-grid">
-  {% for i in projects %}
-    <a href="{% url 'leon_app:project' i.pk %}" style="text-decoration: none; color: inherit;">
-      <div class="grid-card">
-        <div style="border-radius: 8px; overflow: hidden;">
-          <img src="{% if i.thumbnail %}{{ i.thumbnail.url }}{% else %}{% static 'leon_app/default.png' %}{% endif %}" alt="{{ i.name}}">
-        </div>
-        <p class="tiny" style="margin-bottom: 0; padding-bottom: 0; text-align: right;">{{ i.created }}</p>
-        <h3 style="margin-top: 0; padding-top: 0;">{{ i.name }}</h3>
-        <p>{{ i.description }}</p>
-      </div>
-    </a>
-  {% endfor %}
+{% include "leon_app/components/projects-grid.html" with projects=projects %}
+
+<div class="centering">
+  <a href="{% url 'leon_app:projects' %}"><button class='big_button'>See all projects</button></a>
+</div>
+
+<hr>
+<!-- about -->
+<h1>What is this website?</h1>
+<h3>This is a website for showcasing my projects and collecting feedback. My projects are usually (but not exclusively) animations created with the open-source software <a href = 'https://www.blender.org/'>Blender</a>. Please feel free to look at some of the projects give feedback on them. It's always helpful!</h3>
+
+<div class="centering">
+  <a href="{% url 'leon_app:about' %}"><button class='big_button'>See about</button></a>
 </div>
 
 {% endblock %}

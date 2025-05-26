@@ -1,4 +1,4 @@
-{% extends "leon_app/base.html" %}
+{% extends "leon_app/components/base.html" %}
 {% load static %}
 
 {% block title %}Projects{% endblock %}
@@ -13,25 +13,12 @@
   </div>
 
   <div>
-    <h1 class="left">From: newest/oldest/alphabetical/top</h1>
+    <h1 class="left">Sorting: WIP</h1>
     <div class="search">
-      <input type="text" name="search" placeholder="Search">
+      <!-- <input type="text" name="search" placeholder="Search (WIP)"> -->
     </div>
   </div>
 
   <!-- projects grid -->
-  <div class = "projects-grid">
-    {% for i in projects %}
-      <a href="{% url 'leon_app:project' i.pk %}" style="text-decoration: none; color: inherit;">
-        <div class="grid-card">
-          <div style="border-radius: 8px; overflow: hidden;">
-            <img src="{% if i.thumbnail %}{{ i.thumbnail.url }}{% else %}{% static 'leon_app/default.png' %}{% endif %}" alt="{{ i.name}}">
-          </div>
-          <p class="tiny" style="margin-bottom: 0; padding-bottom: 0; text-align: right;">{{ i.created }}</p>
-          <h3 style="margin-top: 0; padding-top: 0;">{{ i.name }}</h3>
-          <p>{{ i.description }}</p>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
+  {% include "leon_app/components/projects-grid.html" with projects=projects %}
 {% endblock %}
