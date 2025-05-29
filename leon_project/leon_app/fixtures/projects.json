@@ -53,5 +53,27 @@
             "description": "The year is 2045, students at Gymnázium Arabská are still using Java and NetBeans IDE 8.0. Modernity is rejected, tradition is embraced. ChatGPT has been banned worldwide after \"The Incident\". Unfortunately, there will be no more \"vibe coding\". :(.",
             "created": "2045-06-04"
         }
+    },
+
+
+    {
+        "model": "leon_app.post",
+        "pk": 1,
+        "fields": {
+            "project": 1,
+            "title": "Example Post for Project 1",
+            "created": "2025-05-28",
+            "content": "This is test text for a post formatted by **Markdown**\n\n- Bullet 1\n- Bullet 2\n\n[Click here](https://example.com)"
+        }
+    },
+    {
+        "model": "leon_app.post",
+        "pk": 2,
+        "fields": {
+            "project": 1,
+            "title": "Another post, this one has an IMAGE!",
+            "created": "2025-05-28",
+            "content": "This is another test post, now with an **image**!\n\n![ExampleImage](https://octodex.github.com/images/minion.png)"
+        }
     }
 ]

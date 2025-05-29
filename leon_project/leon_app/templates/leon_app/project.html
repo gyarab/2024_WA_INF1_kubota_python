@@ -13,24 +13,38 @@
     </div>
 
     <h1>Quick overview</h1>
-    <p>{{ project.description }}</p>
+    <p class="large">{{ project.description }}</p>
 
-    <!-- Temporary scrolling space -->
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
-    <p class="custom" style="text-align: center; font-size: 250; margin-top: 0px; margin-bottom: 0px; color: #00000010">CONTENT</p>
+    <hr>
+
+    <h1>Posts</h1>
+
+    {% for post in posts %}
+        <div class="pane"  style="margin-bottom: 16px">
+            <h1>{{ post.title }}</h1>
+            <p class = "tiny">{{ post.created }}</p>
+            <div>{{ post.content_html|safe }}</div>
+        </div>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
 
     <hr>
 
     <!-- Feedback -->
-    <h1>Leave your feedback!</h1>
+    <h1>Leave Your Feedback!</h1>
     <h2>Please feel free to post any feedback to the work presented here. No login required.</h2>
 
     <!-- Feedback form-->
     <form method="post" action="{% url 'leon_app:project' project.pk %}">
         {% csrf_token %}
-        {{ form.name }}
+        {% if user.is_authenticated %}
+            <div style = "width: 99%; padding-left: 10px; margin-bottom: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border-radius: 8px;">
+                <h3 class="custom">Name: {{ user.username }}</h3>
+            </div>
+        {% else %}
+            {{ form.name }}
+        {% endif %}
         {{ form.text }}
         <button type="submit" style="margin-left: 25%; margin-right: 25%">Submit</button>
     </form>
@@ -38,7 +52,7 @@
     <hr>
 
     <!-- Other users feedback -->
-    <h1>Other users feedback</h1>
+    <h1>Other User Feedback</h1>
     <div class="pane">
         {% for fb in project.feedbacks.all %}
             <div id="feedbacks_card">

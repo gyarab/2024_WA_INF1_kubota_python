@@ -1,8 +1,9 @@
-from .models import Project, Profile
+from .models import Project, Profile, Post
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import FeedbackForm, LoginForm, RegisterForm
 from django.contrib.auth.decorators import login_required
+import markdown
 
 def index(request):
     projects = Project.objects.order_by('-created')[:3]
@@ -21,6 +22,13 @@ def about(request):
 def project(request, pk):
     project = get_object_or_404(Project, pk=pk)
 
+    #get posts
+    posts = project.posts.all()
+
+    for post in posts:
+        post.content_html = markdown.markdown(post.content)
+
+    #for posting feedback
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
@@ -31,7 +39,7 @@ def project(request, pk):
     else:
         form = FeedbackForm()
 
-    return render(request, 'leon_app/project.html', {'project': project, 'form': form})
+    return render(request, 'leon_app/project.html', {'project': project, 'form': form, 'posts': posts})
 
 def login_view(request):
     if request.method == 'POST':

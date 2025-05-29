@@ -8,6 +8,12 @@ class Project(models.Model):
     description = models.TextField()
     created = models.DateField()
 
+class Post(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='posts')
+    title = models.CharField(max_length=50, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    content = models.TextField()
+
 class Feedback(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='feedbacks')
     name = models.CharField(max_length=50, blank=True)
