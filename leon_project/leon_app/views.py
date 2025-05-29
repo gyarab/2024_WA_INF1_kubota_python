@@ -2,6 +2,7 @@ from .models import Project, Profile
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import FeedbackForm, LoginForm, RegisterForm
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     projects = Project.objects.order_by('-created')[:3]
@@ -53,6 +54,7 @@ def logout_view(request):
     logout(request)
     return redirect('leon_app:index')
 
+@login_required
 def settings(request):
     profile = Profile.objects.get(user=request.user)
     return render(request, 'leon_app/settings.html', {'profile': profile})
