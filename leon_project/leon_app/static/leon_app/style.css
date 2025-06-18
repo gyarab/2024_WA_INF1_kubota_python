@@ -77,12 +77,6 @@ input::placeholder, textarea::placeholder {
 }
 
 /* interactable stuff */
-.search {
-  position: absolute;
-  bottom: 25px;
-  right: 10%;
-  color: #000000;
-}
 .big_button {
   font-size: 24px;
   margin-top: 20px;
@@ -130,6 +124,7 @@ p:not(.custom):not(.tiny):not(.small) {
 #footer {
   /* margin-top: 16px; */
   padding-top: 16px;
+  padding-left: 100px;
   /* background-color: var(--footer); */
 }
 #footer p{
