@@ -4,7 +4,7 @@
 {% block title %}{{ project.name }}{% endblock %}
 
 {% block content %}
-    <div style="position: relative; display: inline-block;">
+    <div style="position: relative; width: 100%; display: inline-block;">
         <img id="hero-image" src="{% if project.thumbnail %}{{ project.thumbnail.url }}{% else %}{% static 'leon_app/default.png' %}{% endif %} " alt="{{ project.name }}">
         <div style="position: absolute; bottom: 10%; left: 10%; color: white;">
         <h1 class = "custom" style="font-size: 96px; margin-bottom: 0;">{{ project.name }}</h1>
